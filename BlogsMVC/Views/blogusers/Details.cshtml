@@ -1,0 +1,98 @@
+﻿@model BlogsMVC.Models.bloguser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>bloguser</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LoginName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LoginName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LoginPwd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LoginPwd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CnName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CnName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IsLock)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IsLock)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IsDel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IsDel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AddTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AddTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastLoginTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastLoginTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastLoginIp)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastLoginIp)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
