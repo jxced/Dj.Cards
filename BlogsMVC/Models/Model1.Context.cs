@@ -25,7 +25,7 @@ namespace BlogsMVC.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<blogarticle> blogarticle { get; set; }
         public virtual DbSet<bloguser> bloguser { get; set; }
-        public virtual DbSet<enumeration> enumeration { get; set; }
     }
 }

@@ -14,6 +14,12 @@ namespace BlogsMVC.Models
     
     public partial class bloguser
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public bloguser()
+        {
+            this.blogarticle = new HashSet<blogarticle>();
+        }
+    
         public int Id { get; set; }
         public string LoginName { get; set; }
         public string LoginPwd { get; set; }
@@ -24,5 +30,8 @@ namespace BlogsMVC.Models
         public System.DateTime AddTime { get; set; }
         public System.DateTime LastLoginTime { get; set; }
         public string LastLoginIp { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<blogarticle> blogarticle { get; set; }
     }
 }
