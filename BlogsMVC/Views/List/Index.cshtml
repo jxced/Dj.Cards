@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-@model List<BlogsMVC.Models.blogarticle>
+@model List<article_exp>
 @using BlogsMVC.Models
 <!DOCTYPE html>
 
@@ -53,17 +53,30 @@
                     <li class="table-cell">
                         <input id="chkAll" type="checkbox" name="chkAll" />
                     </li>
-                    @{List<bloguser>list= ViewData["bloguserList"] as List<bloguser>} 
                     <li class="table-cell">@Html.DisplayNameFor(c=>c[0].Id)</li>
-                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Id)</li>
-                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Id)</li>
-                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Id)</li>
-                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Id)</li>
+                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Title)</li>
+                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].CnName)</li>
+                    <li class="table-cell">@Html.DisplayNameFor(c => c[0].Tag)</li>
                     <li class="table-cell">操作</li>
                 </ul>
             </div>
-            
-            @*<%-- <div class="table-footer-group">
+            <div class="table-row-group">
+                @foreach (var item in Model)
+                {
+                    <ul class="table-row">
+                        <li class="table-cell">
+                            <input type="checkbox" />
+                        </li>
+                        <li class="table-cell">@Html.DisplayFor(modelItems=>item.Id)</li>
+                        <li class="table-cell">@Html.DisplayFor(modelItems=>item.Title)</li>
+                        <li class="table-cell">@item.CnName</li>
+                        <li class="table-cell">@Html.DropDownListFor(modelItmes=>item.CategoryId, ViewBag.list as SelectList)</li>
+                        <li class="table-cell">编辑|删除</li>
+                    </ul>
+                }
+                
+               </div>
+                @*<%-- <div class="table-footer-group">
                 <ul class="table-row">
                     <li class="table-cell">备注</li>
                     <li class="table-cell">footer</li>
@@ -105,7 +118,7 @@
                     <li class="table-cell">26</li>
                 </ul>
             </div>--%>*@
-        </div>
+            </div>
     </form>
 </body>
 </html>

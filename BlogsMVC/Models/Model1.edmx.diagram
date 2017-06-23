@@ -8,6 +8,12 @@
         <EntityTypeShape EntityType="myblogsModel.blogarticle" Width="1.5" PointX="7.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="myblogsModel.bloguser" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="myblogsModel.fdd" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="myblogsModel.blogarticlecategory" Width="1.875" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="myblogsModel.blogcommentarticle" Width="1.5" PointX="5" PointY="4.125" />
+        <EntityTypeShape EntityType="myblogsModel.blogcommentphoto" Width="1.5" PointX="2.25" PointY="5.125" />
+        <EntityTypeShape EntityType="myblogsModel.blogphoto" Width="1.5" PointX="7.875" PointY="5.5" />
+        <EntityTypeShape EntityType="myblogsModel.blogphotoalblum" Width="1.5" PointX="9.875" PointY="4.25" />
+        <EntityTypeShape EntityType="myblogsModel.enumeration" Width="1.5" PointX="3.5" PointY="8.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -27,5 +27,11 @@ namespace BlogsMVC.Models
     
         public virtual DbSet<blogarticle> blogarticle { get; set; }
         public virtual DbSet<bloguser> bloguser { get; set; }
+        public virtual DbSet<blogarticlecategory> blogarticlecategory { get; set; }
+        public virtual DbSet<blogcommentarticle> blogcommentarticle { get; set; }
+        public virtual DbSet<blogcommentphoto> blogcommentphoto { get; set; }
+        public virtual DbSet<blogphoto> blogphoto { get; set; }
+        public virtual DbSet<blogphotoalblum> blogphotoalblum { get; set; }
+        public virtual DbSet<enumeration> enumeration { get; set; }
     }
 }
