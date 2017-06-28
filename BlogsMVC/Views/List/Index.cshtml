@@ -67,10 +67,11 @@
                         <li class="table-cell">
                             <input type="checkbox" />
                         </li>
-                        <li class="table-cell">@Html.DisplayFor(modelItems=>item.Id)</li>
-                        <li class="table-cell">@Html.DisplayFor(modelItems=>item.Title)</li>
+                        <li class="table-cell">@Html.DisplayFor(modelItems => item.Id)</li>
+                        <li class="table-cell">@Html.DisplayFor(modelItems => item.Title)</li>
                         <li class="table-cell">@item.CnName</li>
-                        <li class="table-cell">@Html.DropDownListFor(modelItmes=>item.CategoryId, ViewBag.list as SelectList)</li>
+                        <li class="table-cell">@Html.DropDownListFor(modelItmes => item.CategoryId, new SelectList(ViewBag.vlist, "CategoryId", "Name",item.CategoryId))</li>
+                        @*<li class="table-cell">@Html.DropDownListFor(modelItmes => item.CategoryId, ViewBag.xlist as SelectList)</li>*@
                         <li class="table-cell">编辑|删除</li>
                     </ul>
                 }

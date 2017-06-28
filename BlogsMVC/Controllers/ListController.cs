@@ -15,13 +15,9 @@ namespace BlogsMVC.Controllers
         {
             myblogsEntities db = new myblogsEntities();
             //db.bloguser.
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
             var list= db.blogarticle.Join(db.bloguser, a =>a.AuthorId,u=>u.Id,(a,u)=> new article_exp() {Id=a.Id,Title=a.Title,CnName=u.CnName,Tag=a.Tag, CategoryId=a.CategoryId } ).ToList() ;
-            var dlist = db.blogarticlecategory.Select(c => new {Id=c.Id,Name=c.Name }).ToList();
-            ViewBag.list = new SelectList(dlist,"Id","Name");
-            watch.Stop();
-            var s = watch.Elapsed;
+            var dlist = db.blogarticlecategory.Select(c=>new { CategoryId = c.Id,Name=c.Name});
+            ViewBag.vlist = dlist;/* new SelectList(dlist,"Id","Name",2);*/
             return View(list);
         }
         public ActionResult Submit()
