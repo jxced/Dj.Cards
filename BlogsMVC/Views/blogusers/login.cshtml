@@ -16,15 +16,21 @@
 </head>
 <body>
     <div>
-        @Html.BeginForm("login", "blogusers", "post"){
-        @Html.TextAreaFor(c => c.LoginName)
-        @Html.ValidationMessage("LoginName")
-        <br />
-        @Html.PasswordFor(c=>c.LoginPwd)
-        @Html.ValidationMessage("LoginPwd")
-        <br />
-        <input type="submit" value="提交" />
-        }
+        <form action="login" method="post">
+            @Html.DisplayNameFor(c=>c.LoginName)
+            @Html.TextBoxFor(c=>c.LoginName)
+            @Html.ValidationMessage("LoginName")
+            <br /><br />
+
+            @Html.PasswordFor(c => c.LoginPwd)
+            @Html.ValidationMessage("LoginPwd")
+            <br />
+            <input type="submit" value="提交" />
+
+        </form>
+      
+        
+        
        
     </div>
 </body>

@@ -11,7 +11,11 @@ namespace BlogsMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.Design;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel;
+    using System.Web.Mvc;
+
     public partial class bloguser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +25,12 @@ namespace BlogsMVC.Models
         }
     
         public int Id { get; set; }
+        [DisplayName("登录名")]
+        [Required(ErrorMessage ="登录名不能为空")]
+        [Remote("check",)]
         public string LoginName { get; set; }
+        [DisplayName("密码")]
+        [Required(ErrorMessage ="密码不能为空")]
         public string LoginPwd { get; set; }
         public string CnName { get; set; }
         public string Email { get; set; }
