@@ -19,6 +19,11 @@ namespace BlogsMVC.Controllers
         {
             return View(db.bloguser.ToList());
         }
+        public ActionResult login()
+        {
+            db.bloguser.FirstOrDefault();
+            return View();
+        }
 
         // GET: blogusers/Details/5
         public ActionResult Details(int? id)
