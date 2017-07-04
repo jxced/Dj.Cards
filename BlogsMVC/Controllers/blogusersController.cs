@@ -24,6 +24,14 @@ namespace BlogsMVC.Controllers
             db.bloguser.FirstOrDefault();
             return View();
         }
+        [HttpPost]
+        public ActionResult login(FormCollection form)
+        {
+            string name=  form["loginName"];
+            string pwd = form["LoginPwd"];
+            bool b = db.bloguser.Where(c=> c.LoginName == name && c.LoginPwd == pwd).Any();
+            return View();
+        }
 
         // GET: blogusers/Details/5
         public ActionResult Details(int? id)
