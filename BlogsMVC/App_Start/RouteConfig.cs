@@ -19,6 +19,12 @@ namespace BlogsMVC
                 //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
                 defaults: new { controller = "List", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "CheckName",
+                url: "{controller}/{action}/{id}",
+                //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "blogusers", action = "check", id = UrlParameter.Optional }
+            );
         }
     }
 }

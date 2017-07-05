@@ -19,19 +19,33 @@ namespace BlogsMVC.Controllers
         {
             return View(db.bloguser.ToList());
         }
-        public ActionResult login()
+        public ActionResult Login()
         {
-            db.bloguser.FirstOrDefault();
+            
             return View();
         }
         [HttpPost]
-        public ActionResult login(FormCollection form)
+        public ActionResult Login(FormCollection form)
         {
             string name=  form["loginName"];
             string pwd = form["LoginPwd"];
             bool b = db.bloguser.Where(c=> c.LoginName == name && c.LoginPwd == pwd).Any();
             return View();
         }
+        [HttpPost]
+        public ActionResult Check( FormCollection form)
+        {
+            string name = form["loginName"];
+            bool b= db.bloguser.Any(c => c.LoginName == name);
+            if (b)
+            {
+                return Content("false");
+            }
+            else
+            {
+                return Content("true");
+            }
+        } 
 
         // GET: blogusers/Details/5
         public ActionResult Details(int? id)

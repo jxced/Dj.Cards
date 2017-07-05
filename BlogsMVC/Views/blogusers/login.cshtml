@@ -17,21 +17,21 @@
 <body>
     <div>
         <form action="login" method="post">
-            @Html.DisplayNameFor(c=>c.LoginName)
-            @Html.TextBoxFor(c=>c.LoginName,new {@class="loginName" })
+            @Html.DisplayNameFor(c => c.LoginName)
+            @Html.TextBoxFor(c => c.LoginName, new { @class = "loginName" })
             @Html.ValidationMessage("LoginName")
             <br /><br />
-
-            @Html.PasswordFor(c => c.LoginPwd, new { @class= "LoginPwd" })
+            @Html.DisplayNameFor(c => c.LoginPwd)
+            @Html.PasswordFor(c => c.LoginPwd, new { @class = "LoginPwd" })
             @Html.ValidationMessage("LoginPwd")
             <br />
             <input type="submit" value="提交" />
 
         </form>
-      
-        
-        
-       
+
+
+
+
     </div>
 </body>
 </html>
