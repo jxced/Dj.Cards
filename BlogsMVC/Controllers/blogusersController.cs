@@ -21,7 +21,6 @@ namespace BlogsMVC.Controllers
         }
         public ActionResult Login()
         {
-            
             return View();
         }
         [HttpPost]
@@ -30,7 +29,13 @@ namespace BlogsMVC.Controllers
             string name=  form["loginName"];
             string pwd = form["LoginPwd"];
             bool b = db.bloguser.Where(c=> c.LoginName == name && c.LoginPwd == pwd).Any();
+            if (b)
+            {
+                return RedirectToAction("index");
+            }
+            ModelState.AddModelError("","保存失败");
             return View();
+           
         }
         [HttpPost]
         public ActionResult Check( FormCollection form)
@@ -39,11 +44,11 @@ namespace BlogsMVC.Controllers
             bool b= db.bloguser.Any(c => c.LoginName == name);
             if (b)
             {
-                return Content("false");
+                return Content("true");
             }
             else
             {
-                return Content("true");
+                return Content("false");
             }
         } 
 

@@ -27,7 +27,7 @@ namespace BlogsMVC.Models
         public int Id { get; set; }
         [DisplayName("登录名")]
         [Required(ErrorMessage ="登录名不能为空")]
-        [Remote("Check","blogusers", ErrorMessage = "用户名已存在", HttpMethod = "post")]
+        [Remote("Check","blogusers", ErrorMessage = "用户名不存在", HttpMethod = "post")]
         public string LoginName { get; set; }
         [DisplayName("密码")]
         [Required(ErrorMessage ="密码不能为空")]
